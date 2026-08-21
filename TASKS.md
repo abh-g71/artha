@@ -56,6 +56,51 @@ I have not marked P1-T2 complete. Stopping now.lity boundaries for frontend, bac
 - Status: NOT_STARTED
  - Status: COMPLETE
 
+### Phase 2 — AI buyer and orchestration build
+
+## P2-T1: Natural-language intent extraction
+- Task ID: P2-T1
+- Goal: Implement an intent-extraction service that converts free-text user requests into a normalized intermediate representation (IR).
+- Scope: implement intent parsing service (server-side), LLM prompt templates (design-only for Phase 1), an internal API endpoint to parse and return IR, unit tests for common intents, and validation logic that enforces the IR schema.
+ - Scope: implement intent parsing service (server-side), LLM prompt templates and intent extraction logic, an internal API endpoint to parse and return IR, unit tests for common intents, and validation logic that enforces the IR schema.
+- Acceptance criteria: `/api/intent` (internal) returns a validated IR for sample inputs; test coverage for intent parsing; IR conforms to `docs/orchestrator.md` expectations; uses `paise` for numeric currency fields.
+- Status: NOT_STARTED
+
+## P2-T2: Structured buying requirements
+- Task ID: P2-T2
+- Goal: Define and implement the canonical schema for structured buying requirements and server-side validators/transforms.
+- Scope: author `docs/requirements-schema.md` (or extend `docs/data-model.md`), implement a validation module, converters from IR to structured requirements, and unit tests for schema conformance and edge cases.
+- Acceptance criteria: canonical schema checked into docs, validation module with tests, example transformations from IR to structured requirements present.
+- Status: NOT_STARTED
+
+## P2-T3: Merchant/product search and retrieval
+- Task ID: P2-T3
+- Goal: Implement `search_products` and `get_product` APIs that return deterministic product records from the merchant sandbox/catalog fixtures.
+- Scope: API endpoints, index/query layer over fixtures, pagination and filter support (price ranges in paise), and integration tests aligning with fixtures in `docs/fixtures`.
+- Acceptance criteria: deterministic responses for identical queries, filters validated (max results cap), tests demonstrating search and product retrieval, fixtures used for reproducible results.
+- Status: NOT_STARTED
+
+## P2-T4: Product filtering, comparison and ranking
+- Task ID: P2-T4
+- Goal: Implement `compare_products` service to score and rank candidate products deterministically using structured data.
+- Scope: ranking algorithm implementation, deterministic scoring rules, explainability metadata (reasons per score), and unit/integration tests.
+- Acceptance criteria: `compare_products` returns stable ranked lists given identical inputs, includes per-item reasons referencing canonical product fields, and tests cover priority weights and tie-breakers.
+- Status: NOT_STARTED
+
+## P2-T5: Recommendation explanations based on validated facts
+- Task ID: P2-T5
+- Goal: Build explanation generation that produces human-readable rationales strictly derived from validated, canonical product and policy data.
+- Scope: explanation template library, integration with `compare_products`, tests ensuring explanations only reference validated fields (no hallucinated facts), and sample UI-friendly text outputs.
+- Acceptance criteria: explanation outputs reference only canonical fields (price, inventory, seller ratings if available), include links to policy decisions when relevant, and tests to catch hallucination-like content.
+- Status: NOT_STARTED
+
+## P2-T6: Agent run and step state/traceability
+- Task ID: P2-T6
+- Goal: Implement persistence and APIs for `agent_run` and `agent_step` following `docs/orchestrator.md` to enable traceability, replay, and evaluation.
+- Scope: storage schema/migrations (lightweight file/DB fixtures for Phase 2), APIs to create/read agent runs and steps, audit linkage via `record_audit_event`, and tests that persist and retrieve an example run.
+- Acceptance criteria: example agent run can be persisted and retrieved; step-level inputs/outputs and timestamps are stored; audit linkage present; tests validate append-only semantics for steps.
+- Status: NOT_STARTED
+
 ## P1-T4: Design merchant sandbox and product-catalog model
 - Task ID: P1-T4
 - Goal: Define the merchant sandbox shape and the AI-readable product catalog format for onboarding merchants and synthetic testing.
