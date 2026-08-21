@@ -76,3 +76,27 @@ Status: Approved
 Reason: The buildathon and project goals require every money action to be explainable, bounded, and gated. The system must show why a transaction is allowed, what amount is involved, and what policy was applied.
 Trade-offs if explicitly known: Explainability adds transparency and friction in the UI, but it is required for trust and compliance.
 Status: Approved
+
+
+## Decision: Currency representation — use minor units (paise)
+Reason: Using integer minor units (paise) prevents floating-point rounding errors in money calculations and aligns with common payments practices.
+Trade-offs if explicitly known: UI and reporting code must convert paise to rupees for display; developers must remember to use integer minor units across systems.
+Status: Approved
+
+
+## Decision: Authorization scope — per-order `ORDER_PURCHASE`
+Reason: Restricting initial authorization scope to per-order keeps the authorization surface small, auditable, and safer for the initial implementation.
+Trade-offs if explicitly known: This prevents issuing broader autonomous-spend tokens initially, which may reduce convenience in later advanced automation scenarios.
+Status: Approved
+
+
+## Decision: Policy precedence — user > merchant > global
+Reason: More specific policies should override less specific ones to allow user or merchant exceptions while retaining global defaults.
+Trade-offs if explicitly known: Policy evaluation logic must implement and document precedence rules to avoid unexpected behavior.
+Status: Approved
+
+
+## Decision: Inventory reservation at order creation
+Reason: Reserving inventory when an order is created (while payment is pending) reduces oversell risk and keeps order state deterministic for agent flows.
+Trade-offs if explicitly known: Requires reservation lifecycle management (expiration, release) and introduces complexity in inventory accounting and concurrency.
+Status: Approved
