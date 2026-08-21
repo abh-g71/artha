@@ -80,6 +80,7 @@ I have not marked P1-T2 complete. Stopping now.lity boundaries for frontend, bac
   - `docs/policy-engine.md` describing primitives, APIs, and example rule sets
   - Example policy JSON files and sample evaluation cases
 - Status: NOT_STARTED
+ - Status: COMPLETE
 
 ## P1-T6: Confirm agent orchestration pattern and tool contract discipline (design)
 - Task ID: P1-T6
