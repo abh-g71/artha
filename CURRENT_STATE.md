@@ -10,22 +10,12 @@ Phase 1 - Foundation and Architecture Build
 In Progress
 
 ## Completed:
-- GitHub repository initialized
-- Repository structure cleaned
-- ARTHA_PROJECT_SPEC.md created
-- Phase 0 documentation and development-control files created
-- Backend foundation scaffold created
-- Node.js + TypeScript + Express configured
-- Environment configuration added
-- Request logging added
-- Centralized error handling added
-- GET /api/health implemented
-- Health endpoint manually verified on port 3000
-- Health endpoint automated test passed
-- Phase 1 Task 1 committed and pushed
+- P1-T1 Backend foundation scaffold
+- P1-T2 Frontend, backend, and data-model boundaries
+- P1-T3 Authentication and authorization structure design
 
 ## Current task:
-P1-T3: Establish authentication and authorization structure (design)
+P1-T4: Design merchant sandbox and product-catalog model
 
 ## Next:
-P1-T3
+P1-T4

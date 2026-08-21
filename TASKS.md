@@ -54,6 +54,7 @@ I have not marked P1-T2 complete. Stopping now.lity boundaries for frontend, bac
   - Role & permission matrix defined
   - Example protected endpoint patterns documented
 - Status: NOT_STARTED
+ - Status: COMPLETE
 
 ## P1-T4: Design merchant sandbox and product-catalog model
 - Task ID: P1-T4
