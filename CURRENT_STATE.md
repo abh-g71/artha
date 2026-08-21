@@ -4,10 +4,10 @@
 2026-08-21
 
 ## Phase:
-Phase 1 - Foundation and Architecture Build
+Phase 2 - AI Buyer and Orchestration Build
 
 ## Status:
-COMPLETE
+In Progress
 
 ## Completed:
 - P1-T1 Backend foundation scaffold
@@ -17,9 +17,10 @@ COMPLETE
 
 - P1-T5 Deterministic policy and authorization layer design
 - P1-T6 Agent orchestration pattern and tool contract discipline design
+- P2-T1 Natural-language intent extraction
 
 ## Current task:
-Phase 1 complete. Prepare Phase 2 task breakdown.
+P2-T2: Structured buying requirements
 
 ## Next:
-Phase 2 - AI Buyer and Orchestration Build
+P2-T2

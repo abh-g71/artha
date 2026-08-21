@@ -64,7 +64,7 @@ I have not marked P1-T2 complete. Stopping now.lity boundaries for frontend, bac
 - Scope: implement intent parsing service (server-side), LLM prompt templates (design-only for Phase 1), an internal API endpoint to parse and return IR, unit tests for common intents, and validation logic that enforces the IR schema.
  - Scope: implement intent parsing service (server-side), LLM prompt templates and intent extraction logic, an internal API endpoint to parse and return IR, unit tests for common intents, and validation logic that enforces the IR schema.
 - Acceptance criteria: `/api/intent` (internal) returns a validated IR for sample inputs; test coverage for intent parsing; IR conforms to `docs/orchestrator.md` expectations; uses `paise` for numeric currency fields.
-- Status: NOT_STARTED
+- Status: COMPLETE
 
 ## P2-T2: Structured buying requirements
 - Task ID: P2-T2
