@@ -100,3 +100,33 @@ Status: Approved
 Reason: Reserving inventory when an order is created (while payment is pending) reduces oversell risk and keeps order state deterministic for agent flows.
 Trade-offs if explicitly known: Requires reservation lifecycle management (expiration, release) and introduces complexity in inventory accounting and concurrency.
 Status: Approved
+
+
+## Decision: Authentication mechanism — JWT-based authentication
+Reason: JWTs provide a standard stateless access token suitable for APIs and simplify scaling API servers.
+Trade-offs if explicitly known: Requires careful refresh token management and rotation to support revocation; potential client-side storage security considerations.
+Status: Approved
+
+
+## Decision: Access-token transport — Authorization header (Bearer)
+Reason: Using `Authorization: Bearer <token>` is a common HTTP API practice and works well for programmatic clients.
+Trade-offs if explicitly known: Requires careful client-side storage to avoid XSS-based theft; cookies with `HttpOnly` may provide better CSRF resilience in browser flows.
+Status: Approved
+
+
+## Decision: Refresh tokens — rotating refresh tokens
+Reason: Rotating refresh tokens reduce replay risk and allow safer revocation semantics.
+Trade-offs if explicitly known: Requires server-side refresh token tracking and rotation logic; additional state compared with pure stateless JWT usage.
+Status: Approved
+
+
+## Decision: Revocation strategy — short-lived access tokens; revocable rotating refresh tokens; no access-token blacklist initially
+Reason: Short-lived access tokens limit exposure; revocable rotating refresh tokens enable practical revocation without the complexity of an access-token blacklist for Phase 1.
+Trade-offs if explicitly known: Some access tokens remain valid until expiry after revocation; an access-token blacklist can be introduced later if required.
+Status: Approved
+
+
+## Decision: Phase 1 authentication scope — email/password only
+Reason: Limiting Phase 1 to email/password reduces implementation surface and risk for the initial milestone.
+Trade-offs if explicitly known: SSO and MFA are deferred to later phases, which may be needed for enterprise security requirements.
+Status: Approved
