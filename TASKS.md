@@ -67,6 +67,7 @@ I have not marked P1-T2 complete. Stopping now.lity boundaries for frontend, bac
   - `docs/merchant-sandbox.md` with catalog schema and sample fixtures
   - Example `products.csv` template included under `docs/fixtures/`
 - Status: NOT_STARTED
+ - Status: COMPLETE
 
 ## P1-T5: Define deterministic policy and authorization layer (design)
 - Task ID: P1-T5
