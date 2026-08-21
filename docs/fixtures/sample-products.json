@@ -1,0 +1,28 @@
+[
+  {
+    "id": "prod_001",
+    "merchantId": "merchant_demo",
+    "sku": "ANC-720",
+    "name": "ANC Headphones",
+    "price": 479900,
+    "currency": "INR",
+    "condition": "new",
+    "features": { "anc": true, "batteryHours": 35 },
+    "inventory": 12,
+    "returnPolicy": { "days": 7 },
+    "availability": true
+  },
+  {
+    "id": "prod_002",
+    "merchantId": "merchant_demo",
+    "sku": "RUN-100",
+    "name": "Running Shoes",
+    "price": 299900,
+    "currency": "INR",
+    "condition": "new",
+    "features": { "sizeRange": "7-11" },
+    "inventory": 20,
+    "returnPolicy": { "days": 14 },
+    "availability": true
+  }
+]

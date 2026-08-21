@@ -1,0 +1,8 @@
+{
+  "id": "merchant_demo",
+  "name": "Demo Store",
+  "description": "Sandbox merchant for evaluations",
+  "ownerUserId": "user_merchant_owner",
+  "policyId": "policy_merchant_demo",
+  "aiCommerceConfig": { "allowAutonomousPurchase": true, "maxAutonomousTransaction": 500000, "requireConfirmationAbove": 300000 }
+}

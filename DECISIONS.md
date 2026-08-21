@@ -130,3 +130,21 @@ Status: Approved
 Reason: Limiting Phase 1 to email/password reduces implementation surface and risk for the initial milestone.
 Trade-offs if explicitly known: SSO and MFA are deferred to later phases, which may be needed for enterprise security requirements.
 Status: Approved
+
+
+## Decision: SKU uniqueness per merchant
+Reason: Enforce SKU uniqueness per merchant to allow merchants to manage independent catalogs without cross-merchant SKU conflicts.
+Trade-offs if explicitly known: Integrations that expect global SKU uniqueness must instead combine `merchantId` and `sku` to identify items; global deduplication is not provided.
+Status: Approved
+
+
+## Decision: Inventory reservation expiry (default 15 minutes)
+Reason: Reservations should expire to avoid indefinite stock locks; a configurable default of 15 minutes balances payment latency and availability.
+Trade-offs if explicitly known: Short expiries may release stock prematurely for slow payments; longer expiries reduce availability. Make timeout configurable per deployment.
+Status: Approved
+
+
+## Decision: Catalog CSV imports are asynchronous with import report
+Reason: Asynchronous imports scale for large files and provide merchants with a clear import report indicating accepted and rejected rows.
+Trade-offs if explicitly known: Requires job processing and storage for reports; synchronous imports are simpler but risk timeouts on large datasets.
+Status: Approved

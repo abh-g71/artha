@@ -1,0 +1,3 @@
+id,merchantId,sku,name,price_paise,currency,condition,features_json,inventory,return_days,availability,metadata_json
+,merchant_demo,ANC-720,ANC Headphones,479900,INR,new,"{\"anc\":true,\"batteryHours\":35}",12,7,true,
+,merchant_demo,RUN-100,Running Shoes,299900,INR,new,"{\"sizeRange\":\"7-11\"}",20,14,true,
